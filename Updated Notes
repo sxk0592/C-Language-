@@ -1,0 +1,444 @@
+#include <stdio.h>
+#include <stdbool.h>
+#include <math.h>
+#include <ctype.h>
+
+// Functions
+void Birthay (char name[], int age)
+    {
+      printf("Happy Birthday to you %s.", name); 
+      printf("\nYou are %d years of age.",age); 
+    }
+
+float sumof2numbers (float a, float b)
+    {
+     float sum=a+b;
+        return sum;
+    }
+
+int sumof2digits(int x)  
+    {int sum=0;
+        while (x>0)
+            {
+                int lastDigit=x%10;
+                sum+=lastDigit;
+                x/=10;
+            }
+        printf("\nThe sum of the digits are: %d",sum);        
+    }
+
+void combination(int n,int r)
+    { 
+        if(n>=r)
+      {
+        int factorialn=1;
+        for(int i=1; i<=n; i++)
+            {
+                factorialn=factorialn*i;
+            }
+        int factorialr=1;    
+        for (int i=1;i<=r;i++)
+            {
+                factorialr *=i;
+            }
+        int x=n-r;    
+        int factorialnMinusr=1;
+        for (int i=1;i<=x;i++)
+            {
+                factorialnMinusr*=i;
+            }    
+        int result=factorialn/(factorialr*factorialnMinusr);
+        printf("%d",result);
+      }  
+      else
+      {
+        printf("\nMATH ERROR!");
+      }    
+      
+    }    
+int main(){
+/*
+printf("I am sandesh who loves Yachu.\nThis is my first program in C and I am very excited to learn about C and will be very good at C by the end of it."); // \n breaks the line and starts below & needs to be inside of " \n"
+*/
+
+/*
+// Making a grid lines
+printf("1\t2\t3\n4\t5\t6\n7\t8\t9\n"); // \t creates spaces among char and \n  breaks the line.
+*/
+
+/*
+
+// Displaying Quotes
+printf("\"I did not come this far just to come this far\"\n");
+*/
+
+/*
+// Variables
+int x=73; // uses %d to print
+const int PI=3.14789; // uses %d // makes it a constant
+long long int r= 9090909999999099U; // uses %lld for placeholder & add U at the end to avoid crashing //very long integer.
+float GPA=3.99; // Number with decimals // uses %f for float.
+char Handsome[]="SK"; // Adding [] in the declaration is important. // Use %s for array.
+char Name[]= "SANDESH"; // Cannot sto             
+float item2=6.99;
+float item3=4.99;
+printf("This is the price for Item 1: $%f\n", item1);
+printf("This is the price for Item 2: $%.3f\n", item2); // placing .2 after % or any integer is stoping the float to display 2 places after decimal.
+printf("This is the price for Item 3: $%.2f\n", item3);
+*/
+
+/*
+// Arithmetic Operations
+int x=12;
+int y=4;
+//float z=x+y; 
+//float z=x-y;
+//float z=x*y;
+//int z= x%y; // To use % we gotta have int type cause if we dont float numbers dont have remainders.
+printf("%.2f, is the answer\n",z);
+*/
+
+/*
+// Accepting User Input & displaying
+char name [26];
+int age;
+float GPA;
+
+printf("What is your name?\n");
+fgets(name,25,stdin); //  \n is included in this function && name[strlen(name)-1]='\0';
+
+printf("What is your age?\n");
+scanf("%d",&age); // scanf uses %d , and & variable
+
+printf("What is your GPA?\n");
+scanf("%f",&GPA);
+
+printf("Your name is %d.\n",name);
+printf("Your age is %d.\n",age);
+printf("Your GPA is %.2f.\n",GPA);
+*/
+
+/*
+// Math Functions
+    // double A=sqrt(9);
+    // double A=pow(3,2);
+    //int A=round(3.12);
+    //int A=floor(8.99);
+    //int A=fabs(-1092);
+    //int A= log(1);
+    // int A= sin(0);
+    // int A= cos(0);
+    // int A=tan(0);
+
+printf("%d",A); // make sure you use correct place holder with %
+*/
+
+/*
+// Program to calculate Area of Circle with user input
+const float PI= (22.f/7.f);         // Ensure that 22.f and 7.f not 22/7 as it will go for int division instead of float division.
+float radius;
+float areaOfCircle;
+float circumferenceOfCircle;
+
+printf("Enter the value for radius in meters: \n");
+scanf("%f",&radius);
+// calculating the area of the circle
+areaOfCircle= PI*pow(radius,2);
+// calculate the circumference
+circumferenceOfCircle=2*PI*radius;
+// Displaying the area & circumference
+printf("The area of the circle with given radius is %.2f m^2. \n",areaOfCircle); 
+printf("The circumference of circle is %.2f m.",circumferenceOfCircle);
+*/
+
+/*
+// ElseIf & Switches Conditions
+// ElseIfs
+int age;
+printf("Enter your age: \n");
+scanf("%d", &age);              // have to use & in scanf, have to use & in scanf, have to use & in scanf, have to use & in scanf, have to use & in scanf, have to use & in scanf.
+if(age > 18){
+    printf("You are now eligible to vote.");
+    }  
+else if(age=18){
+    printf("You are not allowed to drink.");
+    }    
+else {                      // else does not need to have the (age<18) it becomes a error.
+    printf("You are not eligible to vote.");
+    }
+
+// Switch // more efficient than else ifs 
+char grade;
+printf("\nEnter your grade: \n");
+scanf("%s",&grade); // scanf usees & scanf uses &
+switch(grade){
+    case'A':
+        printf("Excellent\n");
+        break;
+    case 'B':
+        printf("You did well.\n");
+        break;
+    case'C':
+        printf("You did Okay!\n");
+        break;
+    case'D':
+        printf("You need to work on a lot of things!\n");
+        break;
+    case'F':
+        printf("You failed the class.\n");    
+        break;
+
+    default: 
+    printf("Please enter a valid grade. Use capital letters in your garde.\n");    
+}
+*/
+/*
+// Conversion of Temperature
+char temp;
+float tempValue;
+float convertedValue;
+printf("Type C for converting to Celcius and F for Farenheit. \n");
+scanf("%c",&temp);
+temp=toupper(temp);
+
+    if (temp =='F') {
+    printf("Converting to Celcius.\n");
+    printf("Enter the value for conversion: \n");
+    scanf("%f",&tempValue);
+    convertedValue=(tempValue-32)*5/9;
+    printf("It is %.2f degree farenheit.",convertedValue); 
+    }
+
+    else if(temp=='C') {
+    printf("Converting to Farenheit.\n");
+    printf("Enter the value for conversion: \n");
+    scanf("%f",&tempValue);
+    convertedValue=(tempValue*9/5)+32;
+    printf("It is %.2f degree farenheit.",convertedValue); 
+    }
+
+    else{
+    printf("Please enter the correct input.\n");
+    }
+    */
+
+/*
+// Invoking Functions
+    // Calling a functions
+    //Birthday(); // just have to add the functions name followed by () and ;
+
+    // Arguement // int main fuctions tells void Birthday functions to add sandesh and 21 years of age.
+    char name[]= "Sandesh ";
+    int age =21;
+    Birthay(name,age);
+*/
+
+/*
+    // ASCII alphabet comparison
+    char alphabet;
+    printf("Enter a charatcer: \n");
+    scanf("%c",&alphabet);
+    if (alphabet >='a' && alphabet <='z')
+        {
+        printf("It is a lower case alphabet. \n");
+        }
+    else 
+        {
+        printf("It is a uppercase alphabet. \n");
+        }
+    
+*/   
+
+/* Loops 
+     //while loop
+         int count=1;
+         //int i;
+         printf("\n Enter the numbers to print to: ");
+         scanf("%d",&i);
+         while (count <=i)
+            {
+              printf("%d \n", count);
+             count++;
+            }
+*/
+/*    // For Loop
+     int count=10;
+     for(int i=1; i<=count;i++) // initialisation, condition & updatation
+     {
+        printf("%d \n",i);
+     }
+*/  
+
+/*
+ // Using loop to calculate the sum of n numbers;
+ int n=3;
+ int count=1;
+ int sum=0;
+  printf("Enter the number you want the sum to (0 to n):  ");
+  scanf("%d",&n);
+ for (count=1;count<=n;count++) // cannot add the printf statement in this for loop as it print the the statement inside of the loop as well.
+    {
+      sum=sum+ count;
+    }
+        printf("The sum of the number you wanted is %d",sum);
+
+ while (count<=n)
+    {
+    sum=sum+count;
+    count++;
+    }
+    printf("%d",sum);
+*/
+
+
+//Finding out sum of odd numbers from 0 to n (Using Loop & conditional)
+ /*  //For Loop
+    int n;
+    int count=1;
+    int oddSum=0;
+    printf("Enter the numbers you want to find sum of odd numbers to from 0: ");
+    scanf("%d",&n);
+    for(count=1;count<=n;count++)
+    {
+        if (count%2 !=0)
+        {
+            oddSum=count+oddSum;
+        }
+    }  
+    printf("The sum of odd numbers is %d.",oddSum);
+ 
+    // Using while loop
+    int n=10;
+    int count=1;
+    int evenSum=0;
+    while (count<=n)
+    {
+        if(count%2 ==0)
+        {
+            evenSum=evenSum+count;
+        }
+      count++;  
+    }
+    printf("%d",evenSum);
+    */
+
+/*
+ // Findinng out Prime numbers
+ int i=8;
+ int count;
+ bool isPrime=true;
+ for(int count=2; count*count<=i;count++) // for optimal time solution you can use count*count<=i 
+ {
+    if(i%count==0)
+    {
+       isPrime=false;
+       break;
+    }
+ }
+    if (isPrime==true) // use the correct operator if you use = instead of == it will alaways print true for any number
+    {
+     printf("The number a prime number.");
+    }
+    else
+    {
+        printf("The number is not a prime number.");
+    }
+*/
+
+// Nested loops 
+   
+   /* 
+   int i;
+    int n=10;
+    int j;
+    // Printing a Square Pattern
+    for ( int i = 0; i <n; i++)
+    {
+        char ch='A'; // Putting the variable inside of the loop so that it becomes the same.
+        for ( int j = 0; j < n; j++)
+        {
+            printf("%c",ch);
+            ch=ch+1;
+        }
+        printf("\n");
+    }
+    */
+
+  /* 
+    //Printing a Continous Sqaure Pattern
+        int num=1; // putting the variable outside of the loop so it becomes continous.
+        int n=3;
+        for(int i=0;i<n;i++)
+        {
+        for(int j=0;j<n;j++)
+            {
+                printf("%d   ",num);
+            num++;
+            
+            }
+            printf("\n");
+        }
+   */
+
+  /*
+    //Priting stars with exact number of lines
+          int n=4;
+         for(int i=0;i<n;i++)
+         {
+             for(int j=0;j<i+1;j++)
+            {
+            printf("x");
+            }
+            printf("\n");
+         }
+*/
+
+/*
+// Invoking Functions & Finding sum of digits of any number
+float a=2;
+float b=0.7;
+float sum=sumof2numbers(a,b);
+printf("sum= %.2f\n", sum);
+
+char name[]="Sandesh";
+int age=343;
+Birthay(name,age);
+
+int findingSumOfDigits;
+printf("\nEnter the digits to find it's sum: ");
+scanf("%d",& findingSumOfDigits);
+sumof2digits(findingSumOfDigits);
+*/
+
+/*
+// Finding Combination using Functions
+int a=9,b=9;
+combination(a,b); // see Functions in the above section 
+/*
+// this code in the fucntion could be written efficiently
+int factorial (int n)
+{
+    int fact =1;
+    for (int i=1;i<=n: i++)
+        {
+            fact*=1;
+        }
+        return fact;
+}
+ 
+int nCr (int n, int r)
+{
+    int fact_n=factorial (n);
+    int fact_r=factorial (r);
+    int fact_nmr=factorial (n-r);
+
+    return fact_n/(factr*fact_nmr);
+}
+*/
+
+
+
+
+return 0;
+
+}
